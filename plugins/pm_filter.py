@@ -831,7 +831,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("💫 𝙰𝙱𝙾𝚄𝚃 💫", callback_data="about")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.delete()
         await query.message.edit_text(
             text=START_MESSAGE.format(user=query.from_user.mention, bot=temp.B_LINK),
             reply_markup=reply_markup,
@@ -861,10 +860,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton(text="𝖢𝗅𝗈𝗌𝖾", callback_data="close_data")
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons) 
-        await query.message.delete()       
+        reply_markup = InlineKeyboardMarkup(buttons)        
         await query.message.edit_text(        
             text="Select your required mode from below!",
+            disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -899,10 +898,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝙲𝙻𝙾𝚂𝙴', callback_data='close_data'),
             InlineKeyboardButton('𝙷𝙾𝙼𝙴', callback_data='start')           
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons) 
-        await query.message.delete()            
+        reply_markup = InlineKeyboardMarkup(buttons)             
         await query.message.edit_text(                     
             text=script.HELP_TXT.format(query.from_user.mention),
+            disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -914,10 +913,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝙷𝙾𝙼𝙴', callback_data='start'),
             InlineKeyboardButton('𝙲𝙻𝙾𝚂𝙴', callback_data='close_data')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)  
-        await query.message.delete()      
+        reply_markup = InlineKeyboardMarkup(buttons)        
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
+            disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -928,9 +927,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 Back', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.delete()
         await query.message.edit_text(
             text=script.SOURCE_TXT,
+            disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
