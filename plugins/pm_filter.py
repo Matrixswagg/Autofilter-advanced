@@ -831,6 +831,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await removebg_plain(client, query.message)
     elif query.data == "rmbgsticker":
         await removebg_sticker(client, query.message)
+        )
     elif query.data == "pages":
 
     elif query.data == "reqinfo":
