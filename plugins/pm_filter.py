@@ -820,6 +820,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rmbgsticker":
         await removebg_sticker(client, query.message)
     elif query.data == "pages":
+        await query.answer("🤨 Curiosity is a little more, isn't it? 😁", show_alert=True)
     elif query.data == "start":                        
         buttons = [[
             InlineKeyboardButton("× ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs ×", url=f"http://t.me/{temp.U_NAME}?startgroup=true")
