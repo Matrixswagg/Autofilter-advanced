@@ -941,7 +941,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text="""ʜᴇʟʟᴏ, ᴡᴇ ᴀʀᴇ ᴀᴄᴛɪᴠᴇ ᴏɴ ᴏᴛʜᴇʀ sᴏᴄɪᴀʟ ᴍᴇᴅɪᴀ ᴀs ᴡᴇʟʟ, ᴛʜᴇ ᴘʟᴀᴛғᴏʀᴍs ᴡᴇ ᴀʀᴇ ᴀᴄᴛɪᴠᴇ ᴏɴ ᴀʀᴇ ʟɪsᴛᴇᴅ ʙᴇʟᴏᴡ""",
             reply_markup=reply_markup, 
             disable_web_page_preview=True,      
-            parse_mode=enums.ParseMode.HTML'
+           
         )
     elif query.data == "source":
         buttons = [[
