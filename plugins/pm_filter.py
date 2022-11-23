@@ -933,8 +933,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔐 𝐂𝐋𝐎𝐒𝐄', callback_data='close_data')
                                 
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.delete()       
+        reply_markup = InlineKeyboardMarkup(buttons)       
         await query.message.reply_text(
             text="""ʜᴇʟʟᴏ, ᴡᴇ ᴀʀᴇ ᴀᴄᴛɪᴠᴇ ᴏɴ ᴏᴛʜᴇʀ sᴏᴄɪᴀʟ ᴍᴇᴅɪᴀ ᴀs ᴡᴇʟʟ, ᴛʜᴇ ᴘʟᴀᴛғᴏʀᴍs ᴡᴇ ᴀʀᴇ ᴀᴄᴛɪᴠᴇ ᴏɴ ᴀʀᴇ ʟɪsᴛᴇᴅ ʙᴇʟᴏᴡ""",
             reply_markup=reply_markup, 
@@ -1408,9 +1407,9 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         search, files, offset, total_results = pmspoll
     pre = 'pmfilep' if PROTECT_CONTENT else 'pmfile'
     if SINGLE_BUTTON:
-        btn = [[InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}')] for file in files]
+        btn = [[InlineKeyboardButton(text=f"📁[{get_size(file.file_size)}]📁{file.file_name}", callback_data=f'{pre}#{file.file_id}')] for file in files]
     else:
-        btn = [[InlineKeyboardButton(text=f"{file.file_name}", callback_data=f'{pre}#{file.file_id}',),
+        btn = [[InlineKeyboardButton(text=f"📁{file.file_name}", callback_data=f'{pre}#{file.file_id}',),
               InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data=f'{pre}_#{file.file_id}')] for file in files ]             
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
