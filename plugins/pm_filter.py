@@ -923,6 +923,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+    elif query.data == "yt":
+        buttons = [[
+            InlineKeyboardButton('🔔𝐘𝐎𝐔𝐓𝐔𝐁𝐄', url='http://youtube.com/@mallumovies')
+        ], [
+            InlineKeyboardButton('📣𝐈𝐍𝐒𝐓𝐀𝐆𝐑𝐀𝐌', url='https://instagram.com/m_hd_shami_l?igshid=YmMyMTA2M2Y=')
+        ], [
+            InlineKeyboardButton('🏠 𝐇𝐎𝐌𝐄', callback_data='start'),
+            InlineKeyboardButton('🔐 𝐂𝐋𝐎𝐒𝐄', callback_data='close_data')
+                                
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.delete()       
+        await query.message.reply_text(
+            text="""ʜᴇʟʟᴏ, ᴡᴇ ᴀʀᴇ ᴀᴄᴛɪᴠᴇ ᴏɴ ᴏᴛʜᴇʀ sᴏᴄɪᴀʟ ᴍᴇᴅɪᴀ ᴀs ᴡᴇʟʟ, ᴛʜᴇ ᴘʟᴀᴛғᴏʀᴍs ᴡᴇ ᴀʀᴇ ᴀᴄᴛɪᴠᴇ ᴏɴ ᴀʀᴇ ʟɪsᴛᴇᴅ ʙᴇʟᴏᴡ""",
+            reply_markup=reply_markup, 
+            disable_web_page_preview=True,      
+            parse_mode='html'
+        )
     elif query.data == "source":
         buttons = [[
             InlineKeyboardButton('SOURCE CODE', url='https://github.com/MrMKN/PROFESSOR-BOT')
